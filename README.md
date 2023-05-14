@@ -1,7 +1,7 @@
 
 
 ### data architecture
-
+```shell script
 data
 └── nuscenes
     ├── v1.0-trainval (existing)
@@ -9,12 +9,13 @@ data
     ├── sweeps  (existing)
     ├── samples (existing)
     └── gts (new)
-    
+```
 ### checkpoints
+```shell script
 ckpt
 └── bevdet-occ-r50-4d-stereo-24e.pth
 └── bevdet-occ-stbase-4d-stereo-512x1408-24e.pth
-
+```
 ### Nuscenes Occupancy
 | Config                                                                    | mIOU       | Model | Log                                                                                            |
 | ------------------------------------------------------------------------- | ---------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -25,14 +26,15 @@ ckpt
 
 
 ### generated the test's pkl
-
+```shell
 python tools/create_data_bevdet.py
-
+```
 ### test the 42 mAP model
-
+```shell
 python tools/test.py ./configs/bevdet_occ/bevdet-occ-stbase-4d-stereo-512x1408-24e.py ./ckpt/bevdet-occ-stbase-4d-stereo-512x1408-24e.pth --format-only --eval-options 'submission_prefix=./occ_submission'
-
+```shell
 
 ### test the 36 mAP model
-
+```shell
 python tools/test.py ./configs/bevdet_occ/bevdet-occ-r50-4d-stereo-24e.py ./ckpt/bevdet-occ-r50-4d-stereo-24e.pth --format-only --eval-options 'submission_prefix=./occ_submission'
+```shell
