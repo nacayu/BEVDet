@@ -1,4 +1,6 @@
 
+### Official repo
+[BEVDet](https://github.com/HuangJunJie2017/BEVDet)
 
 ### data architecture
 ```shell script
@@ -32,7 +34,7 @@ python tools/create_data_bevdet.py
 ### test the 42 mAP model
 ```shell
 python tools/test.py ./configs/bevdet_occ/bevdet-occ-stbase-4d-stereo-512x1408-24e.py ./ckpt/bevdet-occ-stbase-4d-stereo-512x1408-24e.pth --format-only --eval-options 'submission_prefix=./occ_submission'
-```shell
+```
 
 ### test the 36 mAP model
 ```shell
