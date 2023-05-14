@@ -263,7 +263,7 @@ share_data_config = dict(
 
 test_data_config = dict(
     pipeline=test_pipeline,
-    ann_file=data_root + 'bevdetv2-nuscenes_infos_val.pkl')
+    ann_file=data_root + 'bevdetv2-nuscenes_infos_test.pkl')
 
 data = dict(
     samples_per_gpu=2,  # with 32 GPU
@@ -307,5 +307,5 @@ custom_hooks = [
     ),
 ]
 
-load_from="bevdet-stbase-4d-stereo-512x1408-cbgs.pth"
+load_from="./ckpt/bevdet-stbase-4d-stereo-512x1408-cbgs.pth"
 # fp16 = dict(loss_scale='dynamic')
